@@ -16,10 +16,11 @@ class Users {
         this.introText = introText;
     }
     greet(){
-        console.log(`Hi! i am ${this.name}. My age is ${this.age} and my address is at ${this.address}`);
+        return (`Hi! i am ${this.name}. My age is ${this.age} and my address is at ${this.address}`);
     }
     intro(){
-        console.log(`${this.introText}`);
+        return (`my name is ${this.name} my age is ${this.age} ${this.introText}`);
+        // console.log(`my name is ${this.name} my age is ${this.age} ${this.introText}`);
     }
 }
 // 02 create object
@@ -35,7 +36,10 @@ const putul = {
     name: "Putul Nokrek",
     age: 25,
     address: "Nalchapra",
-    intro: 'I am a classical dancer from my childhood. I love to dance and make other people entertain through dancing!. I get money from doing and performing in different events at locally and nationall.'
+    introText: 'I am a classical dancer from my childhood. I love to dance and make other people entertain through dancing!. I get money from doing and performing in different events at locally and nationall.'
 }
-const me = new Users(putul.name, putul.age, putul.address, putul.intro);
+const me = new Users(putul.name, putul.age, putul.address, putul.introText);
 me.intro();
+// rendering to UI
+document.getElementById("user1").innerHTML = `<p>${kubi.greet()}</p>`;
+document.getElementById("user2").innerHTML = `<p>${me.intro()}</p>`;
