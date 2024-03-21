@@ -59,4 +59,24 @@ let Member = class {
 
 new Member().hellow();
 
+// getter and setter 
+class Circle {
+    constructor(radius) {
+        this._radius = radius;
+    }
+    // Getter for computing the area of the circle
+    get area() {
+        return Math.PI * this._radius * this._radius;
+    }
+    // Setter for dynamically updating the radius and maintaining the area
+    set radius(radius) {
+        this._radius = radius;
+    }
+}
+
+const myCircle = new Circle(5);
+console.log(myCircle.area); // Output: 78.53981633974483
+
+myCircle.radius = 10; // Updating the radius
+console.log(myCircle.area); // Output: 314.1592653589793
 
