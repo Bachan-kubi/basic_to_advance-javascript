@@ -36,9 +36,18 @@ lili.speed = 25;
 lili.run();
 lili.eat();
 
+//overide parents method
 class Rabit extends Animal {
+  // overriding constructor
+  constructor(name, earLength) {
+    super(name);
+    this.earLength = earLength;
+  }
+
   hide() {
-    console.log(`${this.name} hides!`);
+    console.log(
+      `${this.name} hides! it has ear long of ${this.earLength} inches!!`
+    );
   }
   eat() {
     super.eat(); // it call parents eat
@@ -51,8 +60,12 @@ class Rabit extends Animal {
     }, 1000);
   }
 }
-const rabit = new Rabit("Bob", "grass");
+// const rabit = new Rabit("Bob", "grass");
+const rabit = new Rabit("Bob", 10);
 rabit.eat();
 rabit.hide();
 rabit.speed = 10;
 rabit.run();
+console.log(rabit.earLength);
+console.dir(Rabit);
+// overriding constructor
